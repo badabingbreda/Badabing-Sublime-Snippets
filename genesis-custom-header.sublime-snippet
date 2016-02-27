@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+
+//* Add support for custom header
+add_theme_support( 'custom-header', array(
+                                      'flex-height'     => true,
+                                      'width'           => 320,
+                                      'height'          => 120,
+                                      'header-selector' => '${1:.site-title a}',
+                                      'header-text'     => ${2:false},
+                                    ) );
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gen-custheader</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

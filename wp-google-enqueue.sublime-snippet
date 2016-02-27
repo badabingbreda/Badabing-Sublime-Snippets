@@ -1,0 +1,25 @@
+<snippet>
+	<tabTrigger>wp-googenq</tabTrigger>
+	<description>Custom Google Fonts Enqueue</description>
+	<source>source.php</source>
+	<content><![CDATA[
+/**
+ * ENQUEUE GOOGLE FONTS
+ */
+function custom_enqueue_google_font() {
+
+  \$query_args = array(
+                  'family' => '${1:Lato}:${3:300,400,700}|${2:Open Sans}:${3:300,400,700}'
+                );
+  
+  wp_register_style( 'google-fonts', add_query_arg( \$query_args, "//fonts.googleapis.com/css" ), array(), null );
+  wp_enqueue_style( 'google-fonts' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'custom_enqueue_google_font' );
+/*
+ * END ENQUEUE GOOGLE FONTS
+ */
+]]></content>
+</snippet>

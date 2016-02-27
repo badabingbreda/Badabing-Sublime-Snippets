@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+//* Customize the Genesis footer credits
+add_filter( 'genesis_footer_creds_text', 'sp_footer_creds_text' );
+
+function sp_footer_creds_text() {
+  echo '<div class="creds"><p>Copyright &copy; '. date('Y'). '&nbsp;';
+  echo (genesis_get_option('footer_url')!=='') ? ' &middot; <a href="'.genesis_get_option('footer_url').'" target="_blank">'.genesis_get_option('footer_text').'</a>' : genesis_get_option('footer_text');
+  echo '</p></div>';
+  }
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gen-footercred</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Change the default Genesis Footer Filter</description>
+</snippet>

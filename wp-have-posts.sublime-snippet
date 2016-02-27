@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+<?php if ( have_posts() ) : ?>
+
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( '${1:/templatedir/filename}', get_post_format() ); ?>
+
+			<?php endwhile; ?>
+
+<?php else : ?>
+
+	<?php get_template_part( '${1:/templatedir/filename}', 'none' ); ?>
+
+<?php endif; ?>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wp-haveposts</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

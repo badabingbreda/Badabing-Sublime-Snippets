@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+//* Run the Genesis loop
+genesis();
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gen-genloop</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

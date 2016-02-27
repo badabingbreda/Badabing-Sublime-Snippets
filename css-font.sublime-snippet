@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+		<![CDATA[
+		font: ${1:fontfamily} ${4:1em}/${5:1.5} ${6:sans-serif};
+		]]>
+	</content>
+	<tabTrigger>fon</tabTrigger>
+    <description>CSS - font: 1em/1.5 sans-serif;</description>
+    <scope>source.less</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * remove xmlrpc method to prevent brute force hacking
+ */		
+function mmx_remove_xmlrpc_methods( $methods ) {
+    unset( $methods['system.multicall'] );
+    return $methods;
+}
+add_filter( 'xmlrpc_methods', 'mmx_remove_xmlrpc_methods');
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>removxml</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<description>Remove the xmlrpc methods from Wordpress</description>
+</snippet>

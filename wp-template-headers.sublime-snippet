@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+
+/**
+ * ${1:This file is [enter description]}
+ *
+ * @author ${2:Badabing}
+ * @package ${3:package name}
+ * @subpackage ${4:Customizations}
+ */
+
+ ]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wp-templheader</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

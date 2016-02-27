@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+
+//* Check if bb-plugin is activated
+// required the wp-admin/includes/plugin.php to be loaded on frontend
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+/* also check if for current page there is a fl-builder active */
+
+if ( is_plugin_active('bb-plugin/fl-builder.php') && in_array('fl-builder', get_body_class()) ) {
+
+  /*  enqueue scripts and styles */
+  wp_enqueue_script( 'bb-builder-wrap', get_stylesheet_directory_uri(  ) . '/js/fl-builder-wrap.js', array( 'jquery' ), '1.0.0' );
+  wp_enqueue_style( 'bb-builder-enabled' , get_stylesheet_directory_uri(  ) . '/css/fl-builder-enable.css' );
+  wp_enqueue_style('bb-full-width', get_stylesheet_directory_uri(  ). '/css/page_full-width.css',1, '1.0.0');
+
+  remove_action ('genesis_entry_header', 'genesis_do_post_title');
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-checkbb</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

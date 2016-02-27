@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+/*
+ * ADD CUSTOM IMAGE SIZE(S) 
+ */
+function setup_image_sizes() {
+    if( function_exists('add_theme_support') ) {
+        add_theme_support('post-thumbnails');
+    }
+    if ( function_exists( 'add_image_size' ) ) {
+        add_image_size( '${1:my-custom-size}', 500, 360, true );
+    }
+
+    function my_image_sizes(\$sizes){
+        \$custom_sizes = array(
+            '${1:my-custom-size}' => __('${2:Full Name}','${3:textdomain}'),
+        );
+        return array_merge( \$sizes, \$custom_sizes );
+    }
+
+    add_filter('image_size_names_choose', 'my_image_sizes');
+}
+
+add_action( 'after_setup_theme', 'setup_image_sizes' );
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wp-imgsize</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+//* Start the engine
+include_once( get_template_directory() . '/lib/init.php' );
+
+//* Set Localization (do not remove)
+load_child_theme_textdomain( '${1:textdomain}', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', '${2:themedirectory}' ) );
+
+//* Child theme (do not remove)
+define( 'CHILD_THEME_NAME', __( '${3:Theme Name}', '${2:themedirectory}' ) );
+define( 'CHILD_THEME_URL', '${4:http://www.bada-bing.nl/}' );
+define( 'CHILD_THEME_VERSION', '${5:1.0.0}' );
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gen-localize</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

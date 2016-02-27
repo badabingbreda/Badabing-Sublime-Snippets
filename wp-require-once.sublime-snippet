@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+//* Include script-file 
+require_once( get_stylesheet_directory( ) . '/${1:filepath}.php'   );
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wp-incfile</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
