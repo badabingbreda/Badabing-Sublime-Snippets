@@ -1,0 +1,75 @@
+<snippet>
+	<content>
+
+<![CDATA[
+
+/* 	Badabing Custom Post Types Initialization							*/
+/* 	requires cpt library to be active 									*/
+/*  for more features check https://github.com/mboynes/super-cpt/wiki 	*/
+
+function badabing_${1:custom_post_type_name}_custom_post_type() {
+
+	/* check if library cpt is loaded */
+    if ( ! class_exists( 'Super_CPT' ) )
+
+        return;
+
+	/*----------------------------------------------------*/
+
+	// Add ${1:custom_post_type_name} Custom Post Type
+
+	/*---------------------------------------------------*/
+
+	\$${1:custom_post_type_name}_custom_default = array(
+
+		'supports' 		=> 		array( 'title' , 'editor' , 'thumbnail' , 'revisions' , 'excerpt' ,'page-attributes' ) ,
+		'taxonomies' 	=> 		array( 'post_tag' ) ,
+
+	);
+
+	// register ${1:custom_post_type_name} post type
+
+	\$${1:custom_post_type_name} = new Super_Custom_Post_Type( '${1:custom_post_type_name}' , '${1:custom_post_type_name}' , '${1:custom_post_type_name}s' ,  \$${1:custom_post_type_name}_custom_default );
+
+	\$${1:custom_post_type_name}_category = new Super_Custom_Taxonomy( '${1:custom_post_type_name}' , '${1:custom_post_type_name} Category' , '${1:custom_post_type_name} Categories' , 'cat' );
+
+	connect_types_and_taxes( \$${1:custom_post_type_name} , array( \$${1:custom_post_type_name}_category ) );
+
+
+
+	// ${1:custom_post_type_name} meta boxes
+    \$${1:custom_post_type_name}->set_icon("calendar-o");
+
+	\$${1:custom_post_type_name}->add_meta_box(
+
+		array(
+
+			'id'		=> 		'${1:custom_post_type_name}-metaInfo' ,
+	        'title' 	=> 		'${2:Metabox title}' ,
+			'context' 	=> 		'normal' ,
+			'priority' 	=> 		'high' ,
+			'fields' 	=> 		array(
+									'${3:meta_data_field}' 	=>
+										array(
+
+											'label' => __( '${4:meta-data label}','textdomain') ,
+											'type' 					=> 		'text', // textarea, wysiwyg, media, boolean, checkbox, radio, select, date
+											'data-zp_desc' 			=> 		__( '${5:meta data description}','textdomain'),
+
+									 	) ,
+									),
+		),
+	);
+
+
+}
+
+
+add_action( 'after_setup_theme', 'badabing_${1:custom_post_type_name}_custom_post_type' );
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cpt-init</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

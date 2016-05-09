@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+'my_loop_settings' => array(
+    'title'         => __( 'Loop Settings', 'textdomain' ),
+    'file'          => FL_BUILDER_DIR . 'includes/loop-settings.php',
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-loop</tabTrigger>
+	<description>Add bb-field of type loop</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

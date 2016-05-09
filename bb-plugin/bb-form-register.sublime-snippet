@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+FLBuilder::register_settings_form('${1:form_field_name}', array(
+    'title' => __('My Form Field', 'textdomain'),
+    'tabs'  => array(
+        'general'      => array(
+            'title'         => __('General', 'textdomain'),
+            'sections'      => array(
+                'general'       => array(
+                    'title'         => '',
+                    'fields'        => array(
+
+						/* insert fields */
+                        'label'         => array(
+                            'type'          => 'text',
+                            'label'         => __('Label', 'textdomain'),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    ),
+));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-formreg</tabTrigger>
+	<description>Register a bb settings form</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

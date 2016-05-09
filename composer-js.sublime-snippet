@@ -1,0 +1,44 @@
+<snippet>
+	<content><![CDATA[
+{
+	"name"				:		"badabingbreda/${1:name}",
+	"description"		:		"${2:description}",
+	"type"				:		"project",
+	"keywords"			:		["wordpress","wp", "plugin"],
+	"homepage"			:		"http://www.badabing.nl",
+	"license"			:		"GPL-2.0+",
+	"authors"			:	[
+		{
+			"name"		:		"badabingbreda",
+			"email"		: 		"info@badabing.nl"
+		}
+	],
+	"require"			:	{
+		"php"			:	">=5.4.0"
+	},
+	"require-dev"		:	{
+		"raveren/kint"	:	"~1.0",
+		"filp/whoops"	:	"~2.0"
+	},
+	"autoload"			: 	{
+			"classmap"	:	[],
+			"files"		:	[
+			]
+		},
+	"extra"				:	{
+		"branche-alias"	: {
+			"dev-master"	:	"1.0-dev"
+		}
+	},
+	"config"			:	{
+		"vendor-dir"	:	"assets/vendor"
+	},
+	"minimum-stability"	:	"dev"
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>composer-json</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.json</scope>
+</snippet>

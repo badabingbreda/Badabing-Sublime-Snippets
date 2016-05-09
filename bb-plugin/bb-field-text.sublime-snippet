@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+'my_text_field' => array(
+    'type'          => 'text',
+    'label'         => __( 'Text Field', 'textdomain' ),
+    'default'       => '',
+    'maxlength'     => '2',
+    'size'          => '3',
+    'placeholder'   => __( 'Placeholder text', 'textdomain' ),
+    'class'         => 'my-css-class',
+    'description'   => __( 'Text displayed after the field', 'textdomain' ),
+    'help'          => __( 'Text displayed in the help tooltip', 'textdomain' ),
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-text</tabTrigger>
+	<description>Add bb-field of type text</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,74 @@
+<snippet>
+	<content><![CDATA[
+/* Add CPT admin-features */
+
+// Add to admin_init function
+add_filter('manage_edit-${1:custom_post_type_name}_columns', 'add_new_${1:custom_post_type_name}_columns');
+
+function add_new_${1:custom_post_type_name}_columns( \$${1:custom_post_type_name}_columns ) {
+
+	\$new_columns = array (
+
+		'${2:columnid}'		=> 		__('${3:columnlabel}', 'textdomain'),
+
+	);
+
+    return \$new_columns;
+}
+
+// Add to admin_init function
+add_action('manage_${1:custom_post_type_name}_posts_custom_column', 'manage_${1:custom_post_type_name}_columns', 10, 2);
+
+function manage_${1:custom_post_type_name}_columns( \$column_name, \$post_id ) {
+    global \$post;
+    switch (\$column_name) {
+
+    case '${2:columnid}':
+        echo get_post_meta( $post_id, '${4:metabox-fieldname}', true );
+        break;
+
+    default:
+        break;
+    } // end switch
+}
+
+/*
+ * ADMIN COLUMN - SORTING - MAKE HEADERS SORTABLE
+ * https://gist.github.com/906872
+ */
+add_filter("manage_edit-${1:custom_post_type_name}_sortable_columns", '${1:custom_post_type_name}_sort');
+
+function agenda_sort(\$columns) {
+
+    \$custom = array(
+        'startdate'     =>  '${4:metabox-fieldname}' ,
+    );
+
+    return wp_parse_args(\$custom, \$columns);
+}
+
+/*
+ * ADMIN COLUMN - SORTING - ORDERBY
+ * http://scribu.net/wordpress/custom-sortable-columns.html#comment-4732
+ */
+add_filter( 'request', '${4:metabox-fieldname}_column_orderby' );
+
+function ${4:metabox-fieldname}_column_orderby( $vars ) {
+
+    if ( isset( \$vars['orderby'] ) && '${4:metabox-fieldname}' == \$vars['orderby'] ) {
+
+        $vars = array_merge( \$vars, array(
+            'meta_key'  =>  '${4:metabox-fieldname}' ,
+            'orderby'   =>  'meta_value' ,
+                ) );
+    }
+
+    return \$vars;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cpt-admincols</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

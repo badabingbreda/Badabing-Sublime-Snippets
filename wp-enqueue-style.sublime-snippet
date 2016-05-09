@@ -1,14 +1,10 @@
 <snippet>
 	<content><![CDATA[
-/*
- * enable shortcode in widget_text
- */
-add_filter('widget_text', 'do_shortcode');
+wp_enqueue_style ('${1:scriptname}', get_stylesheet_directory_uri() . '/css/${2:filename}.css','', '1', 'all');
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>wp-shortcode-enable</tabTrigger>
+	<tabTrigger>wp-enq-style</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.php</scope>
-	<description>Enable Shortcode in widget_text</description>
 </snippet>

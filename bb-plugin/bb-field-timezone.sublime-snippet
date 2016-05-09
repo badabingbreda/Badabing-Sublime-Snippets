@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+'my_timezone_field' => array(
+	'type'          => 'timezone',
+	'label'         => __( 'Time Zone', 'textdomain' ),
+	'default'		=> 'UTC',
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-timezone</tabTrigger>
+	<description>Add bb-field of type timezone</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

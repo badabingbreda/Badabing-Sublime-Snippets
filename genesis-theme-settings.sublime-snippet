@@ -1,0 +1,77 @@
+<snippet>
+	<content><![CDATA[
+namespace BadabingBreda\genesis\themesettings;
+
+add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__ . '\the_defaults' );
+add_action( 'genesis_settings_sanitizer_init', __NAMESPACE__ . '\the_settings_sanitization_filters' );
+add_action('genesis_theme_settings_metaboxes', __NAMESPACE__ . '\register_the_settings_box');
+
+
+
+/**
+ * Register Defaults
+ * @author Didou Schol
+ * @link http://www.bada-bing.nl
+ *
+ * @param array $defaults
+ * @return array modified defaults
+ *
+ */
+function the_defaults( $defaults ) {
+
+	\$defaults = array (
+		'${1:key_name}' => '${2:default_value}',
+	);
+
+  return \$defaults;
+}
+
+/**
+ * Sanitization
+ * @author Didou Schol
+ * @link http://www.bada-bing.nl/
+ */
+function the_settings_sanitization_filters() {
+
+	genesis_add_option_filter( 'no_html', GENESIS_SETTINGS_FIELD,
+		array(
+			'${1:key_name}',
+		)
+	);
+}
+
+/**
+ * Register Metabox
+ * @author Didou Schol
+ * @link http://www.bada-bing.nl/
+ *
+ * @param string \$_genesis_theme_settings_pagehook
+ */
+function register_the_settings_box( \$_genesis_theme_settings_pagehook ) {
+	add_meta_box( 	'the-settings' ,
+					__('Social Links','textdomain') ,
+					'the_settings_box' ,
+					\$_genesis_theme_settings_pagehook ,
+					'main' ,
+					'high'
+				);
+}
+
+/**
+ * Create Metabox
+ * @author Didou Schol
+ * @link http://www.bada-bing.nl/
+ */
+ function the_settings_box() {
+  ?>
+  <p><?php echo __('The Label:','textdomain');?><br />
+  <input type="text" name="<?php echo GENESIS_SETTINGS_FIELD; ?>[${1:key_name}]" value="<?php echo esc_attr( genesis_get_option('${1:key_name}') ); ?>" size="50" /> </p>
+  <?php
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gen-theme-settings</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

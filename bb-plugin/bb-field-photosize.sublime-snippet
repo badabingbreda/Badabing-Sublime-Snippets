@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+'my_photo_sizes_field' => array(
+    'type'          => 'photo-sizes',
+    'label'         => __('Photo Sizes Field', 'textdomain'),
+    'default'       => 'medium',
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-photosize</tabTrigger>
+	<description>Add bb-field of type photosize</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

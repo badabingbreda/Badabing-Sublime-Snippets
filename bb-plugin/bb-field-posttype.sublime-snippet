@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+'my_post_type_field' => array(
+    'type'          => 'post-type',
+    'label'         => __('Post Type', 'textdomain'),
+    'default'       => 'post',
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-posttype</tabTrigger>
+	<description>Add bb-field of type posttype</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

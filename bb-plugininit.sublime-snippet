@@ -1,0 +1,46 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * Plugin Name: ${1:Module Name}
+ * Plugin URI: ${3:http://www.badabing.nl}
+ * Description: Custom module(s) for the Beaver Builder Plugin.
+ * Version: 1.0
+ * Author: ${2:Didou Schol}
+ * Author URI: ${3:http://www.badabing.nl}
+ */
+define( '${4:function_handler}_MODULES_DIR', plugin_dir_path( __FILE__ ) );
+define( '${4:function_handler}_MODULES_URL', plugins_url( '/', __FILE__ ) );
+
+function ${4:function_handler}_load_module() {
+
+  if ( class_exists( 'FLBuilder' ) ) {
+
+      // Include your custom modules here.
+       require_once ('subdirectory/filename.php');
+
+       // require_once ('subdirectory2/filename.php');
+
+  }
+}
+
+add_action( 'plugins_loaded', '${4:function_handler}_load_textdomain' );
+
+/**
+ * Load plugin textdomain.
+ *
+ * @since 1.0.0
+ */
+function ${4:function_handler}_load_textdomain() {
+
+  load_plugin_textdomain( 'plugin_textdomain', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
+}
+
+add_action( 'init', '${4:function_handler}_load_module' );
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-plugininit</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

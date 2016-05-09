@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+'my_font_field' => array(
+    'type'          => 'font',
+    'label'         => __( 'Font', 'fl-builder' ),
+    'default'       => array(
+        'family'        => 'Helvetica',
+        'weight'        => 300,
+    )
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-font</tabTrigger>
+	<description>Add bb-field of type font</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

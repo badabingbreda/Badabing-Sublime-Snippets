@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+'my_textarea_field' => array(
+    'type'          => 'textarea',
+    'label'         => __( 'Textarea Field', 'textdomain' ),
+    'default'       => '',
+    'placeholder'   => __( 'Placeholder Text', 'textdomain' ),
+    'rows'          => '6',
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-textarea</tabTrigger>
+	<description>Add bb-field of type textarea</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

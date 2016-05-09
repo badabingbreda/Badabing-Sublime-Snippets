@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+// Search all pages.
+'my_suggest_field' => array(
+    'type'          => 'suggest',
+    'label'         => __( 'Suggest Field', 'fl-builder' ),
+    'action'        => '${1:fl_as_posts|fl_as_terms|fl_as_users|fl_as_links}', // posts/terms/users/links
+    'data'          => '${2:page}', // Slug of the post type to search.
+    'limit'         => 3, // Limits the number of selections that can be made.
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-suggest</tabTrigger>
+	<description>Add bb-field of type suggest</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

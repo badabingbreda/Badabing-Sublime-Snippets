@@ -1,0 +1,57 @@
+<snippet>
+	<content><![CDATA[
+namespace BadabingBreda\customize;
+
+add_action( 'customize_register', __NAMESPACE__ . '\my_customizer_register' );
+add_action( 'customize_register', __NAMESPACE__ . '\my_customizer_css' );
+
+function my_customizer_register() {
+	global $wp_customize;
+
+	\$wp_customize->add_section( '${1:section_name}' , array(
+	  'title'      => __( '${2:section_title}','textdomain' ),
+	  'priority'   => 10,
+	) );
+
+	\$wp_customize->add_setting(
+		'${3:setting_name}',									// name for customization-value
+		array(
+	  		'default' => ${4:setting_callback}(),				// setting callback
+	  	)
+	);
+
+	\$wp_customize->add_control(
+		new WP_Customize_Control(
+			\$wp_customize,
+			'${3:setting_name}',
+			array(
+				'label'    => __( '${5:Control Title}', 'textdomain' ),
+				'description' => __( '${6:Control Description}', 'textdomain' ),
+				'section'  => '${1:section_name}',
+				'settings' => '${3:setting_name}',
+			)
+		)
+	);
+}
+
+function ${4:setting_callback} () {
+	return 'default value';											// default value
+}
+
+function my_customizer_css () {
+
+	\$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
+	\$heading_font = get_theme_mod( '${3:setting_name}', ${4:setting_callback}() );
+
+	\$css = "font-family: {\$heading_font};";
+
+    if ( \$css ) {
+    	wp_add_inline_style( \$handle, \$css );
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wp-customizer-add</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

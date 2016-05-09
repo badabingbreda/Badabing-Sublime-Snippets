@@ -1,14 +1,13 @@
 <snippet>
 	<content><![CDATA[
-/*
- * enable shortcode in widget_text
- */
-add_filter('widget_text', 'do_shortcode');
-
+'my_link_field' => array(
+    'type'          => 'link',
+    'label'         => __('Link Field', 'textdomain'),
+),
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>wp-shortcode-enable</tabTrigger>
+	<tabTrigger>bb-f-link</tabTrigger>
+	<description>Add bb-field of type link</description>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.php</scope>
-	<description>Enable Shortcode in widget_text</description>
 </snippet>

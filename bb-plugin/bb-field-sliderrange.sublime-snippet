@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+/* use explode('|' , $value ); to separate min-max values */
+'fieldname'      => array(
+  'type'        => 'sliderrange',
+  'label'       => __( 'Field name' , 'textdomain' ),
+  'settings'     => array (
+      'min'       => 100,
+      'max'       => 200,
+      'defmin'     => 50,
+      'defmax'     => 75,
+      'step'      => 5,
+      'color'     => '#f6931f',
+    ),
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-sliderrange</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

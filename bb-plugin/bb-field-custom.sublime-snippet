@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+function ${1:my_custom_field}(\$name, \$value, \$field, \$settings) {
+    echo '<input type="text" class="text text-full" name="' . \$name . '" value="' . \$value . '" />';
+}
+
+add_action('fl_builder_control_${1:my_custom_field}', '${1:my_custom_field}', 1, 4);
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-custom</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

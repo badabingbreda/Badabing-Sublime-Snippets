@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+'my_color_field' => array(
+    'type'          => 'color',
+    'label'         => __( 'Color Picker', 'fl-builder' ),
+    'default'       => '333333',
+    'show_reset'    => true,
+),]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-color</tabTrigger>
+	<description>Add bb-field of type color</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

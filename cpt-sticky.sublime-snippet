@@ -1,0 +1,78 @@
+<snippet>
+	<content><![CDATA[
+
+/* ADD sticky feature to the Custom Post Type */
+// see /wp-admin/edit-form-advanced.php .. since wp 2.5.0
+add_action( 'submitpost_box', function() {
+
+    // fyi .. unable to use "post_submitbox_minor_actions" action (/wp-admin/includes/meta-boxes.php) because $post_type is set early
+
+    global \$post;
+
+    \$_custom_post_types = array (
+    								'${1:custom_post_type_name}',
+    							);
+
+    if ( isset( \$post->post_type ) && in_array( \$post->post_type, \$_custom_post_types ) ) {
+
+        echo 'before'; // debug
+
+        \$post->post_type_original = \$post->post_type;
+
+        \$post->post_type = 'post';
+    }
+} );
+
+// see /wp-admin/includes/meta-boxes.php .. since wp 2.9.0
+add_action( 'post_submitbox_misc_actions', function() {
+
+    global \$post;
+
+    \$_custom_post_types = array (
+    								'${1:custom_post_type_name}',
+    							);
+
+    if ( isset( \$post->post_type_original ) && in_array( \$post->post_type_original, \$_custom_post_types ) ) {
+
+        echo 'after'; // debug
+
+        \$post->post_type = \$post->post_type_original;
+
+        unset( \$post->post_type_original );
+    }
+} );
+
+
+
+/*
+	Exclude / Include Sticky posts using below code
+
+    \$all_sticky = get_option( 'sticky_posts' );	// get all sticky posts, posts + cpt's
+
+	/*  get the items, but exclude the sticky posts, they are shown before if any  */
+	query_posts( array (
+		'post_type' => '${1:custom_post_type_name}',
+		'meta_key' => 'post_type_meta_key_name',
+		'orderby' => 'meta_value',
+		'order' => 'ASC',
+		'post__in'	=> \$all_sticky,
+	) );
+
+	query_posts( array (
+		'post_type' => '${1:custom_post_type_name}',
+		'meta_key' => 'post_type_meta_key_name',
+		'meta_compare' => '>=',
+		'meta_value'   => date ('Y-m-d') ,//'2016-03-06' ,
+		'orderby' => 'meta_value',
+		'order' => 'ASC',
+		'post__not_in'	=> $all_sticky,
+	) );
+
+ */
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cpt-sticky</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

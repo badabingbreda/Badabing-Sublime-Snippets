@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+'${1:my_form_field}' => array(
+  'type'          => 'form',
+  'label'         => __('My Form', 'textdomain'),
+  'form'          => 'my_form_field', // ID of a registered form.
+  'preview_text'  => 'label', // ID of a field to use for the preview text.
+  'multiple'      => false,
+  'show_remove'   => true,
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-form</tabTrigger>
+	<description>Add bb-field of type form</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

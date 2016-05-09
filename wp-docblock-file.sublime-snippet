@@ -1,14 +1,17 @@
 <snippet>
 	<content><![CDATA[
-/*
- * enable shortcode in widget_text
+/**
+ * ${1:Description}
+ *
+ * @package ${2:packagename}
+ * @since 1.0.0
+ * @author badabingbreda
+ * @link http://www.badabing.nl
+ * @license GNU General Public License 2.0+
  */
-add_filter('widget_text', 'do_shortcode');
-
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>wp-shortcode-enable</tabTrigger>
+	<tabTrigger>wp-docblock-file</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.php</scope>
-	<description>Enable Shortcode in widget_text</description>
 </snippet>

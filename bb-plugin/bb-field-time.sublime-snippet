@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+'my_time_field' => array(
+	'type'       => 'time',
+	'label'      => __( 'Time', 'textdomain' ),
+	'default'		=>array(
+		'hours'			=> '01',
+		'minutes'		=> '00',
+		'day_period'	=> 'am',
+	),
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-time</tabTrigger>
+	<description>Add bb-field of type time</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

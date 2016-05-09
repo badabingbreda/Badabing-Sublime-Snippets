@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+'toggle'     => array(
+	'type'          => 'toggle',
+	'label'         => __( 'Toggle Field', 'textdomain' ),
+	'default'       => 'no',
+	'options'       => array(
+	  'yes'         => 'Yes',
+	  'no'          => 'No',
+	  'maybe'       => 'Maybe',
+	),
+	'oncolor'         => '333333',
+	'offcolor'        => '#d1d1d1',
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-toggle</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
