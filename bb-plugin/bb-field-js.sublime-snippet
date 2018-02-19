@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+'js' 			=> array(
+	'type'          => 'code',
+	'label'         => '',
+	'editor'        => 'javascript',
+	'rows'          => '19',
+	'preview'           => array(
+		'type'              => 'none'
+	)
+),
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-f-js</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.php</scope> -->
+</snippet>

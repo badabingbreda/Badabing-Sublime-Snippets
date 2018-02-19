@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+// add action
+add_action( 'init', '${1:customize_font_list}' );
+
+/**
+ * load custom fonts to the system list
+ * @return void
+ */
+function ${1:customize_font_list}(){
+
+    \$custom_fonts = array(
+        'acumin-pro-extra-condensed' => array(
+            'fallback' => 'Arial, sans-serif',
+            'weights' => array(
+                '400',
+                '700'
+            )
+        )
+    );
+
+    foreach(\$custom_fonts as \$name => \$settings){
+        // Add to Theme Customizer
+        if(class_exists('FLFontFamilies') && isset(FLFontFamilies::\$system)){
+            FLFontFamilies::\$system[\$name] = \$settings;
+        }
+
+        // Add to Page Builder
+        if(class_exists('FLBuilderFontFamilies') && isset(FLBuilderFontFamilies::\$system)){
+            FLBuilderFontFamilies::\$system[\$name] = \$settings;
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-custom-font</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

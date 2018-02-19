@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+'tab_name'			=> array(
+	'title'					=> __( 'Tab Title' , 'textdomain'  ),
+	'sections'				=> array(
+	/* add section here */
+	),
+)${1:,}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bb-tab</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
